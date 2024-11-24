@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ffcccc, #ffe6e6);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .container {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ff6b81;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #555;
+      margin: 20px 0;
+    }
+
+    .button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: white;
+      background: #ff6b81;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+      background: #ff4b61;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* รูปลอย */
+    .floating-img {
+      position: absolute;
+      bottom: -150px;
+      width: 100px;
+      height: auto;
+      animation: floatUp 5s linear infinite;
+    }
+
+    .floating-img:nth-child(2) {
+      animation-delay: 1s;
+    }
+
+    .floating-img:nth-child(3) {
+      animation-delay: 2s;
+    }
+
+    .floating-img:nth-child(4) {
+      animation-delay: 3s;
+    }
+
+    /* แอนิเมชันลอย */
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>HAPPY BIRTHDAY TO YOU ❤️</h1>
+    <p>You make my life complete, and I’m so lucky to call you mine. Here’s to many more birthdays together. I love you!</p>
+    <button class="button" onclick="showSurprise()">open it</button>
+
+    <div id="surpriseMessage" class="hidden">
+      <!-- <p>เค้าขอให้วันนี้เป็นวันที่ดีที่สุดของเทอนะ</p> -->
+      <!-- <p>ขอบคุณที่อยู่ข้างเค้าตลอดมา 🎉 รักมากๆ เลย</p> -->
+      <img src="card.PNG" alt="Surprise" style="width: 300px; height: auto; border-radius: 10px;" />
+    </div>
+  </div>
+
+  <!-- รูปภาพลอย -->
+  <img class="floating-img" src="h.png" style="left: 20%;" />
+  <img class="floating-img" src="pink-heart.webp" style="left: 50%;" />
+  <img class="floating-img" src="present.png" style="left: 70%;" />
+  <img class="floating-img" src="ce.png" style="left: 30%;" />
+
+  <script>
+    function showSurprise() {
+      document.getElementById('surpriseMessage').classList.remove('hidden');
+    }
+  </script>
+  <audio autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+</body>
+</html>
